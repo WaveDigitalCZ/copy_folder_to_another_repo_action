@@ -39,8 +39,10 @@ ls -la $CLONE_DIR
 cp -af "$INPUT_SOURCE_FOLDER/." "$CLONE_DIR"
 cd "$CLONE_DIR"
 
+
+git config --global --add safe.directory $CLONE_DIR
+
 echo "Adding git commit"
-ls -la .
 git add .
 if git status | grep -q "Changes to be committed"
 then
