@@ -38,7 +38,7 @@ echo "Copying contents to git repo"
 ls -la $CLONE_DIR
 cp -af "$INPUT_SOURCE_FOLDER/." "$CLONE_DIR"
 cd "$CLONE_DIR"
-
+git config --global --add safe.directory /tmp/tmp.oPIDhB
 echo "Adding git commit"
 git add .
 if git status | grep -q "Changes to be committed"
