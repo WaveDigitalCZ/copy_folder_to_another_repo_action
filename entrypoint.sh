@@ -35,6 +35,7 @@ fi
 
 echo "Copying contents to git repo"
 # shellcheck disable=SC2115
+ls -la
 rm -rf "$CLONE_DIR/"
 mkdir -p "$CLONE_DIR/"
 cp -a "$INPUT_SOURCE_FOLDER/." "$CLONE_DIR/"
