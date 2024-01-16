@@ -36,9 +36,7 @@ fi
 echo "Copying contents to git repo"
 # shellcheck disable=SC2115
 ls -la $CLONE_DIR
-rm -rf "$CLONE_DIR/$INPUT_DESTINATION_FOLDER/"
-mkdir -p "$CLONE_DIR/$INPUT_DESTINATION_FOLDER/"
-cp -a "$INPUT_SOURCE_FOLDER/." "$CLONE_DIR/$INPUT_DESTINATION_FOLDER/"
+cp -af "$INPUT_SOURCE_FOLDER/." "$CLONE_DIR"
 cd "$CLONE_DIR"
 
 echo "Adding git commit"
