@@ -29,8 +29,6 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://$API_TOKEN
 
 git config --global --add safe.directory /github/workspace
 
-echo $(git show -s --format=%s)
-echo "$(git show -s --format=%s)"
 
 if [ -n "$INPUT_DESTINATION_BRANCH_CREATE" ]
 then
@@ -51,7 +49,7 @@ echo "Adding git commit"
 git add .
 if git status | grep -q "Changes to be committed"
 then
-  git commit --message "$INPUT_COMMIT_MSG"
+  git commit --message "$(git show -s --format=%s)"
   echo "Pushing git commit"
   git push -u origin "HEAD:$OUTPUT_BRANCH"
 else
