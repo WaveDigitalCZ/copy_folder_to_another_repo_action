@@ -15,7 +15,7 @@ then
 fi
 OUTPUT_BRANCH="$INPUT_DESTINATION_BRANCH"
 git config --global --add safe.directory /github/workspace
-INPUT_COMMIT_MSG="Update $(git show -s --format=%s)."
+INPUT_COMMIT_MSG="$(git show -s --format=%s)"
 
 CLONE_DIR=$(mktemp -d)
 
