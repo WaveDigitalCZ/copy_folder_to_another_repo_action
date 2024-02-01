@@ -15,10 +15,7 @@ then
 fi
 OUTPUT_BRANCH="$INPUT_DESTINATION_BRANCH"
 
-if [ -z "$INPUT_COMMIT_MSG" ]
-then
-  INPUT_COMMIT_MSG="Update $INPUT_DESTINATION_FOLDER."
-fi
+INPUT_COMMIT_MSG="Update $(git show -s --format=%s)."
 
 CLONE_DIR=$(mktemp -d)
 
