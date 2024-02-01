@@ -27,7 +27,7 @@ git config --global user.email "$INPUT_USER_EMAIL"
 git config --global user.name "$INPUT_USER_NAME"
 git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://$API_TOKEN_GITHUB@github.com/$INPUT_DESTINATION_REPO.git" "$CLONE_DIR"
 commitMessage = $(git show -s --format=%s)
-echo commitMessage
+echo $commitMessage
 
 if [ -n "$INPUT_DESTINATION_BRANCH_CREATE" ]
 then
